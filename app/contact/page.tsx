@@ -24,15 +24,6 @@ const Contact = () => {
 		e.preventDefault();
 		setLoading(true);
 
-		// const contact = {
-		// 	_type: 'contact',
-		// 	name: formData.username,
-		// 	email: formData.email,
-		// 	message: formData.message,
-		// };
-
-		// Perform any additional logic you need for form submission
-		// For Formspree, use handleSubmitForm() to handle the form submission
 		await handleSubmitForm(e);
 
 		setLoading(false);
