@@ -1,0 +1,256 @@
+body {
+	background-color: var(--background-color);
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+}
+
+.site-wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	margin: auto;
+	max-width: 70%;
+}
+
+.site-content {
+	flex: 1;
+}
+
+main {
+	padding: var(--size-fluid-2);
+}
+
+.default-layout {
+	max-width: 56rem;
+	padding-inline: 1rem;
+	margin-inline: auto;
+}
+.header {
+	background-color: var(--header-footer-background);
+	height: 5%;
+	border-radius: 5px;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.header {
+	position: fixed;
+	width: 100%;
+	.header-right {
+		display: none;
+
+		@media (min-width: 440px) {
+			display: flex;
+			gap: 4rem;
+		}
+	}
+
+	.header-right-drop {
+		display: block;
+
+		@media (min-width: 440px) {
+			display: none;
+		}
+	}
+}
+
+.header .header-right div a {
+	color: white;
+	text-decoration: none;
+}
+
+.main-navigation {
+	text-transform: uppercase;
+	font-family: var(--font-caveat);
+	margin-inline-start: auto;
+	position: absolute;
+	width: 30%;
+	vertical-align: middle;
+	color: white;
+	top: 0.4rem;
+	right: 0;
+
+	ul main-navigation__link {
+		color: red;
+	}
+}
+.main-navigation__button {
+	background-color: #7c4dff;
+	border-radius: 1rem;
+	border: none;
+}
+.main-navigation__list {
+	list-style-type: none;
+}
+.main-navigation__list a {
+	text-decoration: none;
+}
+.main-navigation__link--current a {
+	color: white;
+}
+.main-navigation__button {
+	color: orange;
+}
+.footer {
+	background-color: var(--header-footer-background);
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 5%;
+	border-radius: 5px;
+	color: white;
+}
+.oneCar {
+	margin-top: 10rem;
+}
+
+.product-teaser {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 4rem;
+}
+.product-teaser__title {
+	margin: auto;
+}
+
+.product-teaser__image {
+	border-radius: 1rem;
+}
+
+/*   Contact Page */
+
+.app__footer {
+	flex: 1;
+	width: 100%;
+	flex-direction: column;
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+	}
+}
+
+.app__footer-cards {
+	width: 60%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 4em 2rem 2rem;
+
+	.app__footer-card {
+		min-width: 290px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+
+		margin: 1rem 0;
+		padding: 1rem;
+		border-radius: 10px;
+		cursor: pointer;
+		background-color: #fef4f5;
+
+		transition: all 0.3s ease-in-out;
+
+		img {
+			width: 40px;
+			height: 40px;
+			margin: 0 0.7rem;
+		}
+
+		p {
+			font-weight: 500;
+		}
+		a {
+			text-decoration: none;
+			font-weight: 500;
+		}
+		&:hover {
+			box-shadow: 0 0 25px #fef4f5;
+		}
+
+		@media screen and (max-width: 450px) {
+			width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+	}
+}
+
+.app__footer-cards .app__footer-card:last-child {
+	background-color: #f2f7fb;
+}
+
+.app__footer-cards .app__footer-card:last-child:hover {
+	box-shadow: 0 0 25px #f2f7fb;
+}
+
+.app__footer-form {
+	width: 60%;
+	flex-direction: column;
+	margin: 1rem 2rem;
+
+	div {
+		width: 100%;
+
+		margin: 0.75rem 0;
+		border-radius: 10px;
+		cursor: pointer;
+		background-color: var(--primary-color);
+
+		transition: all 0.3s ease-in-out;
+
+		input,
+		textarea {
+			width: 100%;
+			padding: 0.95rem;
+			border: none;
+			border-radius: 7px;
+			background-color: #d1c4e9;
+
+			font-family: var(--font-base);
+			color: var(--secondary-color);
+			outline: none;
+		}
+
+		textarea {
+			height: 170px;
+		}
+
+		&:hover {
+			box-shadow: 0 0 25px #9575cd;
+		}
+	}
+
+	button {
+		padding: 1rem 2rem;
+		border-radius: 10px;
+		border: none;
+		background-color: #b39ddb;
+
+		font-weight: 500;
+		color: var(--white-color);
+		outline: none;
+		margin: 2rem 0 0 0;
+		font-family: var(--font-base);
+
+		transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+		cursor: pointer;
+
+		&:hover {
+			background-color: #9575cd;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		margin: 1rem 0;
+	}
+}

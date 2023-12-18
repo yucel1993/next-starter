@@ -1,0 +1,14 @@
+/* Hier Komponenten importieren */
+
+#demo-carousel-container {
+	margin: 7rem auto;
+	.image-corousel {
+		border-radius: 3rem;
+	}
+	.demo-carousel-container-div .image-corousel {
+		border-radius: 2rem;
+	}
+	.legend {
+		text-transform: uppercase;
+	}
+}

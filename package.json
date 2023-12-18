@@ -1,0 +1,40 @@
+{
+	"name": "next",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@formspree/react": "^2.5.1",
+		"@types/node": "20.10.5",
+		"@types/react": "18.2.45",
+		"@types/react-dom": "18.2.18",
+		"client-only": "^0.0.1",
+		"eslint": "8.56.0",
+		"eslint-config-next": "14.0.4",
+		"graphql-request": "^6.1.0",
+		"next": "14.0.4",
+		"nextjs-toploader": "^1.6.4",
+		"open-props": "^1.6.16",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-icons": "^4.12.0",
+		"react-responsive-carousel": "^3.2.23",
+		"redaxios": "^0.5.1",
+		"server-only": "^0.0.1",
+		"typescript": "5.3.3",
+		"zod": "^3.22.4",
+		"zod-form-data": "^2.0.2"
+	},
+	"devDependencies": {
+		"@total-typescript/ts-reset": "^0.5.1",
+		"cssnano": "^6.0.2",
+		"postcss-import": "^15.1.0",
+		"postcss-jit-props": "^1.0.14",
+		"postcss-preset-env": "^9.3.0"
+	}
+}
