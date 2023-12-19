@@ -2,6 +2,10 @@ body {
 	background-color: var(--background-color);
 	height: 100vh;
 }
+.dark-mode {
+	background-color: black;
+	color: white;
+}
 a {
 	text-decoration: none;
 }
@@ -29,9 +33,9 @@ main {
 }
 .header {
 	background-color: var(--header-footer-background);
+	color: white;
 	height: 5%;
 	border-radius: 5px;
-	color: white;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -61,6 +65,34 @@ main {
 .header .header-right div a {
 	color: white;
 	text-decoration: none;
+}
+.header .button-darkmode {
+	background-color: #76b23d;
+	border-radius: 50%;
+	display: flex;
+	align-content: center;
+}
+
+.header .button-daymode {
+	background-color: yellow;
+	border-radius: 50%;
+	display: flex;
+	align-content: center;
+}
+.main-navigation-dark {
+	text-transform: uppercase;
+	font-family: var(--font-caveat);
+	margin-inline-start: auto;
+	position: fixed;
+	background-color: #9575cd;
+	width: 30%;
+	height: 100vh;
+	vertical-align: middle;
+
+	top: 0.4rem;
+	right: 0;
+	z-index: 20;
+	border-radius: 4px;
 }
 
 .main-navigation {

@@ -8,6 +8,8 @@ import NextTopLoader from 'nextjs-toploader';
 import '@/css/style.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { DarkModeProvider } from '@/context/colorContext';
+import { Metadata } from 'next';
 
 const caveat = Caveat({
 	weight: ['400', '700'],
@@ -16,21 +18,29 @@ const caveat = Caveat({
 	display: 'swap',
 });
 
+export const metadata: Metadata = {
+	title: 'Cars',
+	description: 'Eine Next-Website',
+	icons: [{ url: '/logo.jpeg', type: 'image/svg+xml' }],
+};
+
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body className={caveat.className}>
-				<Header />
-				<div className="site-wrapper">
-					<NextTopLoader color="orange" />
-					<div className="site-content">{children}</div>
-				</div>
-				<Footer />
-			</body>
-		</html>
+		<DarkModeProvider>
+			<html lang="en">
+				<body className={caveat.className}>
+					<Header />
+					<div className="site-wrapper">
+						<NextTopLoader color="orange" />
+						<div className="site-content">{children}</div>
+					</div>
+					<Footer />
+				</body>
+			</html>
+		</DarkModeProvider>
 	);
 }

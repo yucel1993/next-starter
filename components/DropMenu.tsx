@@ -1,4 +1,5 @@
 'use client';
+import { useDarkMode } from '@/context/colorContext';
 import { useToggle } from '@/lib/hooks/useToggle';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -25,6 +26,7 @@ https://inclusive-components.design/menus-menu-buttons/
 */
 
 export default function MainNavigation() {
+	const { isDarkMode, toggleDarkMode } = useDarkMode();
 	const [showMenu, toggleMenu] = useToggle(false);
 	const pathname = usePathname();
 	// console.log(pathname);
@@ -36,7 +38,15 @@ export default function MainNavigation() {
 		}
 	};
 	return (
-		<nav className={showMenu ? 'main-navigation' : 'main-navigation-close'}>
+		<nav
+			className={
+				showMenu
+					? isDarkMode
+						? 'main-navigation-dark'
+						: 'main-navigation'
+					: 'main-navigation-close'
+			}
+		>
 			<button
 				onClick={toggleMenu}
 				className="main-navigation__button"

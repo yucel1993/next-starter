@@ -9,7 +9,7 @@ import Link from 'next/link';
 const DemoCarousel = () => {
 	return (
 		<div id="demo-carousel-container">
-			<Carousel autoPlay infiniteLoop>
+			<Carousel autoPlay infiniteLoop showThumbs={false}>
 				<div className="demo-carousel-container-div">
 					<Image
 						className="image-corousel"
