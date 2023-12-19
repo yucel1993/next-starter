@@ -4,6 +4,10 @@ import { useToggle } from '@/lib/hooks/useToggle';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { CgCloseO, CgMenuRound } from 'react-icons/cg';
+import { IoHome } from 'react-icons/io5';
+import { FaCarAlt } from 'react-icons/fa';
+import { MdContactPhone } from 'react-icons/md';
+import { FaClipboardQuestion } from 'react-icons/fa6';
 
 /* Hier noch den Typ LinkTarget erstellen und sicherstellen,
 dass die Objekte in linkTargets diesem Typ entsprechen. */
@@ -14,10 +18,10 @@ type LinkTarget = {
 };
 
 const links = [
-	{ url: '/', text: 'Main' },
-	{ url: '/cars', text: 'Cars' },
-	{ url: '/contact', text: 'Contact' },
-	{ url: '/about', text: 'About' },
+	{ url: '/', text: 'Main', icon: <IoHome /> },
+	{ url: '/cars', text: 'Cars', icon: <FaCarAlt /> },
+	{ url: '/contact', text: 'Contact', icon: <MdContactPhone /> },
+	{ url: '/about', text: 'About', icon: <FaClipboardQuestion /> },
 ];
 
 /*
@@ -76,7 +80,7 @@ function getMenuItems(
     erhalten, zusätzlich soll das Link-Element, das der aktuell angezeigten
     Seite entspricht, die Klasse main-navigation__link--current erhalten */
 
-	return linkTargets.map(({ text, url }) => (
+	return linkTargets.map(({ text, url, icon }) => (
 		<li key={url}>
 			<Link
 				href={url}
@@ -85,6 +89,7 @@ function getMenuItems(
 				}  `}
 				onClick={handleLinkClick}
 			>
+				<span className="icon">{icon}</span>
 				{text}
 			</Link>
 		</li>
