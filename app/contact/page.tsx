@@ -33,26 +33,26 @@ const Contact = () => {
 	if (state.succeeded || isFormSubmitted) {
 		return (
 			<div>
-				<h3 className="head-text">Thank you for getting in touch!</h3>
+				<h3 className="contact-block">Thank you for getting in touch!</h3>
 			</div>
 		);
 	}
 
 	return (
-		<>
+		<main className="contact-block">
 			<h2 className="head-text">Take a coffee & chat with me</h2>
 
 			<div className="app__footer-cards">
 				<div className="app__footer-card ">
 					{/* <img src={images.email} alt="email" /> */}
 					<a href="mailto:hello@micael.com" className="p-text">
-						alpagut1993@gmail.com
+						hello@micael.com
 					</a>
 				</div>
 				<div className="app__footer-card">
 					{/* <img src={images.mobile} alt="phone" /> */}
-					<a href="tel:+49 1637879999" className="p-text">
-						+49 163 787 9999
+					<a href="tel:+49 4545454545" className="p-text">
+						+47 45 455454
 					</a>
 				</div>
 			</div>
@@ -103,7 +103,7 @@ const Contact = () => {
 					{state.submitting || loading ? 'Sending...' : 'Send Message'}
 				</button>
 			</form>
-		</>
+		</main>
 	);
 };
 

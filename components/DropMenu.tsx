@@ -36,7 +36,7 @@ export default function MainNavigation() {
 		}
 	};
 	return (
-		<nav className="main-navigation">
+		<nav className={showMenu ? 'main-navigation' : 'main-navigation-close'}>
 			<button
 				onClick={toggleMenu}
 				className="main-navigation__button"
