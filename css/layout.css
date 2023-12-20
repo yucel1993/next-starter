@@ -220,14 +220,25 @@ main {
 	-moz-box-shadow: 3px 0px 32px 30px rgba(240, 26, 158, 0.35);
 	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35); */
 }
+.header-right .header-div-color {
+	color: deeppink !important;
+}
 
 .home-button {
+	border: none;
 	margin-top: 1rem;
 	border-radius: 1rem;
 	box-shadow: #7c4dff;
 	-webkit-box-shadow: 3px 0px 32px 30px rgba(240, 26, 126, 0.35);
 	-moz-box-shadow: 3px 0px 32px 30px rgba(240, 26, 158, 0.35);
 	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
+}
+.home-button:hover {
+	cursor: pointer;
+	color: white;
+	background: linear-gradient(to right, red, blue);
+	border: none;
+	box-shadow: #7c4dff;
 }
 
 /* Car divider */

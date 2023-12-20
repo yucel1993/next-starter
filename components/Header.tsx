@@ -1,17 +1,31 @@
 'use client';
-import { FaRegSun } from 'react-icons/fa';
-import { MdNightlight } from 'react-icons/md';
+import { FaCarAlt, FaRegSun } from 'react-icons/fa';
+import {
+	MdContactPhone,
+	MdNightlight,
+	MdOutlineFavorite,
+} from 'react-icons/md';
 import Link from 'next/link';
 import MainNavigation from './DropMenu';
 import { useDarkMode } from '@/context/colorContext';
 import React from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { IoHome } from 'react-icons/io5';
+import { FaClipboardQuestion } from 'react-icons/fa6';
+
+const links = [
+	{ url: '/', text: 'Main', icon: <IoHome /> },
+	{ url: '/cars', text: 'Cars', icon: <FaCarAlt /> },
+	{ url: '/favorites', text: 'Favorites', icon: <MdOutlineFavorite /> },
+	{ url: '/contact', text: 'Contact', icon: <MdContactPhone /> },
+	{ url: '/about', text: 'About', icon: <FaClipboardQuestion /> },
+];
 
 const Header = () => {
 	const { isDarkMode, toggleDarkMode } = useDarkMode();
 	const pathname = usePathname();
-	const isTrue = pathname.includes();
+	console.log('pathname', pathname);
 
 	React.useEffect(() => {
 		if (isDarkMode) {
@@ -36,23 +50,18 @@ const Header = () => {
 			</div>
 
 			<div className="header-right">
-				<div>
-					<Link href="/">Main</Link>
-				</div>
-
-				<div>
-					<Link href="/cars">Cars</Link>
-				</div>
-
-				<div>
-					<Link href="/favorites">Favorites</Link>
-				</div>
-				<div>
-					<Link href="/about">About</Link>
-				</div>
-				<div>
-					<Link href="/contact">Contact</Link>
-				</div>
+				{links.map((item) => (
+					<div key={item.text}>
+						<Link
+							className={
+								item.url === pathname ? 'header-div-color' : 'normal-link'
+							}
+							href={item.url}
+						>
+							{item.icon} {item.text}
+						</Link>
+					</div>
+				))}
 			</div>
 			<div>
 				<button
