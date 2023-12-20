@@ -5,6 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
 import Link from 'next/link';
+// import DemoCarousel2 from '@/components/DemoCaraouse';
 
 const DemoCarousel = () => {
 	return (
@@ -19,7 +20,7 @@ const DemoCarousel = () => {
 						src="/img/polo.jpeg"
 						alt="Slide 1"
 					/>
-					<p className="legend">Legend 1</p>
+					<p className="legend">Polo</p>
 				</div>
 				<div>
 					<Image
@@ -30,7 +31,7 @@ const DemoCarousel = () => {
 						src="/img/bmw.jpeg"
 						alt="Slide 2"
 					/>
-					<p className="legend">Legend 2</p>
+					<p className="legend">BMW</p>
 				</div>
 				<div>
 					<Image
@@ -41,13 +42,14 @@ const DemoCarousel = () => {
 						src="/img/tesla.jpeg"
 						alt="Slide 3"
 					/>
-					<p className="legend">Legend 3</p>
+					<p className="legend">Tesla</p>
 				</div>
 			</Carousel>
 
 			<Link href="/cars">
 				<h2>Check Our Cars</h2>
 			</Link>
+			{/* <DemoCarousel2 /> */}
 		</div>
 	);
 };

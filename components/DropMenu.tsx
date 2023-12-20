@@ -15,6 +15,7 @@ dass die Objekte in linkTargets diesem Typ entsprechen. */
 type LinkTarget = {
 	text: string;
 	url: string;
+	icon: React.ReactNode;
 };
 
 const links = [

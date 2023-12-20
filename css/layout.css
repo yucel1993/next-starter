@@ -168,8 +168,13 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 4px;
 	flex-wrap: wrap;
 	margin-bottom: 4rem;
+	box-shadow: #7c4dff;
+	-webkit-box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
+	-moz-box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
+	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
 }
 .product-teaser__title {
 	margin: auto;
@@ -177,6 +182,38 @@ main {
 
 .product-teaser__image {
 	border-radius: 1rem;
+}
+
+/* Car divider */
+
+.site-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.site-content {
+	flex: 1;
+}
+
+.site-header,
+.site-footer {
+	padding: var(--size-fluid-3);
+	background-color: var(--header-footer-background);
+}
+
+.site-header {
+	color: var(--heading-color);
+	display: flex;
+	align-items: center;
+	position: relative;
+	&__title {
+		font-family: var(--font-karla);
+		font-size: 3rem;
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+	}
 }
 
 /*   Contact Page */

@@ -90,4 +90,13 @@ html {
 
 .capitalize {
 	text-transform: capitalize;
+	list-style-type: none;
+	display: flex;
+	gap: 3px;
+}
+.category-navigation-button {
+	width: 6rem;
+	background-color: aqua;
+	border: none;
+	border-radius: 3px;
 }

@@ -12,25 +12,6 @@ type Params = {
 const OneCar = async ({ params }: Params) => {
 	// @ts-ignore
 	const { post } = await getPostData(params.id);
-	// const query = gql`
-	// 	{
-	// 		posts {
-	// 			nodes {
-	// 				id
-	// 				title
-	// 				featuredImage {
-	// 					node {
-	// 						mediaItemUrl
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// `;
-	// const response = (await request(WP_URL, query)) as {
-	// 	posts: { nodes: GraphCar[] };
-	// };
-	console.log('post man', post);
 
 	return (
 		<main className="oneCar">
