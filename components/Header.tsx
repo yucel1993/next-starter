@@ -6,9 +6,12 @@ import MainNavigation from './DropMenu';
 import { useDarkMode } from '@/context/colorContext';
 import React from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
 	const { isDarkMode, toggleDarkMode } = useDarkMode();
+	const pathname = usePathname();
+	const isTrue = pathname.includes();
 
 	React.useEffect(() => {
 		if (isDarkMode) {
