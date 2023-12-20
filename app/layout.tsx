@@ -10,6 +10,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { DarkModeProvider } from '@/context/colorContext';
 import { Metadata } from 'next';
+import DemoCarousel2 from '@/components/DemoCaraouse';
 
 const caveat = Caveat({
 	weight: ['400', '700'],
@@ -38,6 +39,7 @@ export default function RootLayout({
 						<NextTopLoader color="orange" />
 						<div className="site-content">{children}</div>
 					</div>
+					<DemoCarousel2 />
 					<Footer />
 				</body>
 			</html>
