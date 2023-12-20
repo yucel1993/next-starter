@@ -11,6 +11,7 @@ import Footer from '@/components/Footer';
 import { DarkModeProvider } from '@/context/colorContext';
 import { Metadata } from 'next';
 import DemoCarousel2 from '@/components/DemoCaraouse';
+import { FavoritesProvider } from '@/context/FavoritesContext';
 
 const caveat = Caveat({
 	weight: ['400', '700'],
@@ -32,17 +33,19 @@ export default function RootLayout({
 }) {
 	return (
 		<DarkModeProvider>
-			<html lang="en">
-				<body className={caveat.className}>
-					<Header />
-					<div className="site-wrapper">
-						<NextTopLoader color="orange" />
-						<div className="site-content">{children}</div>
-					</div>
-					<DemoCarousel2 />
-					<Footer />
-				</body>
-			</html>
+			<FavoritesProvider>
+				<html lang="en">
+					<body className={caveat.className}>
+						<Header />
+						<div className="site-wrapper">
+							<NextTopLoader color="orange" />
+							<div className="site-content">{children}</div>
+						</div>
+						<DemoCarousel2 />
+						<Footer />
+					</body>
+				</html>
+			</FavoritesProvider>
 		</DarkModeProvider>
 	);
 }

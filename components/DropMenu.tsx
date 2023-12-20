@@ -8,6 +8,7 @@ import { IoHome } from 'react-icons/io5';
 import { FaCarAlt } from 'react-icons/fa';
 import { MdContactPhone } from 'react-icons/md';
 import { FaClipboardQuestion } from 'react-icons/fa6';
+import { MdOutlineFavorite } from 'react-icons/md';
 
 /* Hier noch den Typ LinkTarget erstellen und sicherstellen,
 dass die Objekte in linkTargets diesem Typ entsprechen. */
@@ -21,6 +22,7 @@ type LinkTarget = {
 const links = [
 	{ url: '/', text: 'Main', icon: <IoHome /> },
 	{ url: '/cars', text: 'Cars', icon: <FaCarAlt /> },
+	{ url: '/favorites', text: 'Favorites', icon: <MdOutlineFavorite /> },
 	{ url: '/contact', text: 'Contact', icon: <MdContactPhone /> },
 	{ url: '/about', text: 'About', icon: <FaClipboardQuestion /> },
 ];

@@ -205,6 +205,30 @@ main {
 .product-teaser__image {
 	border-radius: 1rem;
 }
+.car-container {
+	border-bottom-left-radius: 2rem;
+	border-bottom-right-radius: 2rem;
+}
+
+.colorful {
+	cursor: pointer;
+	color: white;
+	background: linear-gradient(to right, red, blue);
+	border: none;
+	box-shadow: #7c4dff;
+	/* -webkit-box-shadow: 3px 0px 32px 30px rgba(240, 26, 126, 0.35);
+	-moz-box-shadow: 3px 0px 32px 30px rgba(240, 26, 158, 0.35);
+	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35); */
+}
+
+.home-button {
+	margin-top: 1rem;
+	border-radius: 1rem;
+	box-shadow: #7c4dff;
+	-webkit-box-shadow: 3px 0px 32px 30px rgba(240, 26, 126, 0.35);
+	-moz-box-shadow: 3px 0px 32px 30px rgba(240, 26, 158, 0.35);
+	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
+}
 
 /* Car divider */
 

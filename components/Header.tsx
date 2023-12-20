@@ -42,6 +42,9 @@ const Header = () => {
 				</div>
 
 				<div>
+					<Link href="/favorites">Favorites</Link>
+				</div>
+				<div>
 					<Link href="/about">About</Link>
 				</div>
 				<div>

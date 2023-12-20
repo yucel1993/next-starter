@@ -32,7 +32,7 @@ const DemoCarousel = () => {
 								src="/img/bmw.jpeg"
 								alt="Slide 2"
 							/>
-							<p className="legend">BMW</p>
+							<p className="legend">BMV</p>
 						</div>
 						<div>
 							<Image
@@ -55,7 +55,9 @@ const DemoCarousel = () => {
 			</div>
 
 			<Link href="/cars">
-				<h2>Check Our Cars</h2>
+				<button className="colorful home-button">
+					<h2>Check Our Cars</h2>
+				</button>
 			</Link>
 		</div>
 	);
