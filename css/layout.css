@@ -164,6 +164,28 @@ main {
 	margin-top: 10rem;
 }
 
+.demo-carousel-container-text-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 3rem;
+}
+
+@media (max-width: 440px) {
+	.demo-carousel-container-text-container {
+		flex-direction: column;
+		.image-corousel {
+			width: 30%;
+		}
+	}
+}
+/* @media (min-width: 440px) {
+	.demo-carousel-container-text-container {
+		flex-direction: row;
+	}
+} */
+
 .product-teaser {
 	display: flex;
 	justify-content: center;

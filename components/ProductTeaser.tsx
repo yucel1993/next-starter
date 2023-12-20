@@ -43,6 +43,9 @@ export default function ProductTeaser({
 						}
 						alt="png"
 					/>
+					{/* <button onClick={() => addFavorite({ id, title, featuredImage })}>
+						Add Favorite
+					</button> */}
 				</div>
 			)}
 		</article>

@@ -6,14 +6,17 @@ type Prop = {
 	setShowCookiesModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const CookiePolicyModal = ({ setShowCookiesModal }: Prop) => {
-	const [cookiesAccepted, setCookiesAccepted] = useState(false);
+	const [cookiesAccepted, setCookiesAccepted] = useState(
+		typeof window !== 'undefined' &&
+			localStorage.getItem('cookiesAccepted') === 'true'
+	);
 
 	const handleAcceptCookies = () => {
 		// Handle setting the cookiesAccepted state to true
 		setCookiesAccepted(true);
 		setShowCookiesModal(false);
 		// You can also save this value in localStorage or a state management solution like Redux
-		// localStorage.setItem('cookiesAccepted', true);
+		localStorage.setItem('cookiesAccepted', 'true');
 	};
 
 	const handleRejectCookies = () => {
@@ -24,7 +27,7 @@ const CookiePolicyModal = ({ setShowCookiesModal }: Prop) => {
 	};
 
 	const modalStyles = {
-		width: '20%',
+		width: '40%',
 		position: 'fixed',
 		top: '50%',
 		left: '50%',
@@ -35,6 +38,7 @@ const CookiePolicyModal = ({ setShowCookiesModal }: Prop) => {
 	};
 
 	return (
+		// @ts-ignore
 		<div style={modalStyles}>
 			<h2>Cookies Policy</h2>
 			<p>
