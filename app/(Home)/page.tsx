@@ -10,7 +10,7 @@ const DemoCarousel = () => {
 	return (
 		<div id="demo-carousel-container">
 			<div className="demo-carousel-container-text-container">
-				<div>
+				<div className="demo-carousel-container-text-container-div">
 					<Carousel width="70%" autoPlay infiniteLoop showThumbs={false}>
 						<div className="demo-carousel-container-div">
 							<Image

@@ -1,8 +1,11 @@
 body {
-	background-color: var(--background-color);
+	background-image: url('../public/img/vector-JUL-2021-61.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
 	height: 100vh;
 }
 .dark-mode {
+	background: black;
 	background-color: black;
 	color: white;
 }
@@ -180,11 +183,9 @@ main {
 		}
 	}
 }
-/* @media (min-width: 440px) {
-	.demo-carousel-container-text-container {
-		flex-direction: row;
-	}
-} */
+.demo-carousel-container-text-container-div {
+	width: 100%;
+}
 
 .product-teaser {
 	display: flex;
