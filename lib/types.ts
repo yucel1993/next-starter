@@ -9,3 +9,17 @@ export type GraphCar = {
 		};
 	};
 };
+
+export type GraphCarTitle = {
+	post: {
+		id: string;
+		title: string;
+		slug: string;
+		featuredImage: {
+			node: {
+				mediaItemUrl: string;
+				sourceUrl?: string;
+			};
+		};
+	};
+};

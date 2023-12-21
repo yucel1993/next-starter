@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { request, gql } from 'graphql-request';
-import { GraphCar } from '@/lib/types';
+import { GraphCar, GraphCarTitle } from '@/lib/types';
 import ProductTeaser from '@/components/ProductTeaser';
 const WP_URL = process.env.GRAPQL_BASE!;
 type Params = {
@@ -35,7 +35,7 @@ async function getPostData(slug: string) {
   }
 `;
 
-	const response = (await request(WP_URL, query)) as GraphCar;
+	const response = (await request(WP_URL, query)) as GraphCarTitle;
 	// return { ...data[0], img };
 
 	return response;
@@ -45,9 +45,10 @@ async function getPostData(slug: string) {
 
 export async function generateMetadata({ params: { id } }: Params) {
 	const post = await getPostData(id);
+	console.log('posttitle', post.post.title);
 
 	return {
-		title: post.title,
+		title: post.post.title,
 	};
 }
 
