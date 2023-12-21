@@ -7,6 +7,7 @@ type Prop = {
 	featuredImage: {
 		node: {
 			sourceUrl?: string;
+			mediaItemUrl?: string;
 		};
 	};
 };
@@ -19,14 +20,17 @@ export default function FavoriteTeaser({ title, featuredImage }: Prop) {
 					<h2 style={{ textAlign: 'center' }}>
 						<strong>{title} </strong>
 					</h2>
-					<Image
-						width={400}
-						height={400}
-						className="product-teaser__image"
-						sizes="(max-width: 20rem) 90vw,  54rem"
-						src={featuredImage.node.sourceUrl}
-						alt="png"
-					/>
+
+					{featuredImage.node.sourceUrl && (
+						<Image
+							width={400}
+							height={400}
+							className="product-teaser__image"
+							sizes="(max-width: 20rem) 90vw,  54rem"
+							src={featuredImage.node.sourceUrl}
+							alt="png"
+						/>
+					)}
 				</div>
 				<button className="colorful" onClick={() => removeFavorite(title)}>
 					Remove Favorite

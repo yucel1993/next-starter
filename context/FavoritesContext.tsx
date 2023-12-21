@@ -7,6 +7,7 @@ type FavoriteItem = {
 	featuredImage: {
 		node: {
 			sourceUrl?: string;
+			mediaItemUrl?: string;
 		};
 	};
 };
@@ -15,46 +16,52 @@ type Prop = {
 	children: React.ReactNode;
 };
 
-// Define the type for the context value
+//! Define the type for the context value
 type FavoritesContextType = {
 	favorites: FavoriteItem[];
 	addFavorite: (newFavorite: FavoriteItem) => void;
 	removeFavorite: (title: string) => void;
 };
 
-// Create a new context for managing favorites
+//! Create a new context for managing favorites
 const FavoritesContext = createContext<FavoritesContextType>({
 	favorites: [],
 	addFavorite: () => {},
 	removeFavorite: () => {},
 });
 
-// Custom hook to access the FavoritesContext
+//! Custom hook to access the FavoritesContext
 export const useFavorites = (): FavoritesContextType => {
 	return useContext(FavoritesContext);
 };
 
-// Favorites Provider component
+//! Favorites Provider component
 export const FavoritesProvider = ({ children }: Prop) => {
-	// Load favorites from local storage or initialize as an empty array
-	const initialFavorites = localStorage.getItem('favorites');
-	const [favorites, setFavorites] = useState<FavoriteItem[]>(
-		initialFavorites ? (JSON.parse(initialFavorites) as FavoriteItem[]) : []
-	);
+	//! Load favorites from local storage or initialize as an empty array
 
-	// Save favorites to local storage whenever favorites change
+	const [favorites, setFavorites] = useState<FavoriteItem[]>([]);
+
 	useEffect(() => {
-		localStorage.setItem('favorites', JSON.stringify(favorites));
-	}, [favorites]);
+		try {
+			const initialFavorites = JSON.parse(
+				localStorage.getItem('favorites') ?? ''
+			) as FavoriteItem[];
+			console.log(initialFavorites);
+			setFavorites(initialFavorites);
+		} catch (error) {
+			console.log(error);
+		}
+	}, []);
 
-	// Function to add a new favorite
 	const addFavorite = (newFavorite: FavoriteItem) => {
 		const isExisting = favorites.some(
 			(favorite) => favorite.title === newFavorite.title
 		);
 
 		if (!isExisting) {
-			setFavorites([...favorites, newFavorite]);
+			const updatedFavorites = [...favorites, newFavorite];
+			setFavorites(updatedFavorites);
+			localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
 		} else {
 			console.log('This favorite already exists in favorites!');
 		}
@@ -65,6 +72,7 @@ export const FavoritesProvider = ({ children }: Prop) => {
 		const updatedFavorites = favorites.filter(
 			(favorite) => favorite.title !== title
 		);
+		localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
 		setFavorites(updatedFavorites);
 	};
 
