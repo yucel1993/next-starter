@@ -45,7 +45,6 @@ async function getPostData(slug: string) {
 
 export async function generateMetadata({ params: { id } }: Params) {
 	const post = await getPostData(id);
-	console.log('posttitle', post.post.title);
 
 	return {
 		title: post.post.title,
