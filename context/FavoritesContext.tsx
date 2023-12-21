@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, FC } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // Define the type for favorite items
 type FavoriteItem = {
@@ -19,7 +19,7 @@ type Prop = {
 type FavoritesContextType = {
 	favorites: FavoriteItem[];
 	addFavorite: (newFavorite: FavoriteItem) => void;
-	removeFavorite: (idToRemove: string) => void;
+	removeFavorite: (title: string) => void;
 };
 
 // Create a new context for managing favorites
@@ -36,11 +36,19 @@ export const useFavorites = (): FavoritesContextType => {
 
 // Favorites Provider component
 export const FavoritesProvider = ({ children }: Prop) => {
-	const [favorites, setFavorites] = useState<FavoriteItem[]>([]);
+	// Load favorites from local storage or initialize as an empty array
+	const initialFavorites = localStorage.getItem('favorites');
+	const [favorites, setFavorites] = useState<FavoriteItem[]>(
+		initialFavorites ? (JSON.parse(initialFavorites) as FavoriteItem[]) : []
+	);
+
+	// Save favorites to local storage whenever favorites change
+	useEffect(() => {
+		localStorage.setItem('favorites', JSON.stringify(favorites));
+	}, [favorites]);
 
 	// Function to add a new favorite
 	const addFavorite = (newFavorite: FavoriteItem) => {
-		// Check if the new favorite already exists in the favorites list
 		const isExisting = favorites.some(
 			(favorite) => favorite.title === newFavorite.title
 		);
@@ -52,14 +60,14 @@ export const FavoritesProvider = ({ children }: Prop) => {
 		}
 	};
 
-	// Function to remove a favorite by ID
+	// Function to remove a favorite by title
 	const removeFavorite = (title: string) => {
 		const updatedFavorites = favorites.filter(
 			(favorite) => favorite.title !== title
 		);
 		setFavorites(updatedFavorites);
 	};
-	console.log(favorites);
+
 	return (
 		<FavoritesContext.Provider
 			value={{ favorites, addFavorite, removeFavorite }}

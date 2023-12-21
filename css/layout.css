@@ -1,7 +1,8 @@
 body {
 	background-image: url('../public/img/vector-JUL-2021-61.jpg');
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 	background-position: center;
+	background-size: contain;
 	height: 100vh;
 }
 .dark-mode {
