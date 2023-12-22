@@ -207,6 +207,12 @@ main {
 .product-teaser__image {
 	border-radius: 1rem;
 }
+@media (max-width: 440px) {
+	.product-teaser__image {
+		width: 10rem;
+		height: 10rem;
+	}
+}
 .car-container {
 	border-bottom-left-radius: 2rem;
 	border-bottom-right-radius: 2rem;

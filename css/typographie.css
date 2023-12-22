@@ -89,14 +89,21 @@ html {
 }
 
 .capitalize {
+	margin-right: 2rem;
 	text-transform: capitalize;
 	list-style-type: none;
 	display: flex;
-	gap: 3px;
+	gap: 6px;
 }
 .category-navigation-button {
 	width: 6rem;
 	background-color: aqua;
 	border: none;
-	border-radius: 3px;
+	border-radius: 2rem;
+}
+@media (max-width: 440px) {
+	.capitalize {
+		display: flex;
+		flex-direction: column;
+	}
 }
