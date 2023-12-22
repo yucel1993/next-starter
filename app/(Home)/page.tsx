@@ -56,7 +56,7 @@ const DemoCarousel = () => {
 
 			<Link href="/cars">
 				<button className="home-button">
-					<h2>Check Our Cars</h2>
+					<h4>Our Cars</h4>
 				</button>
 			</Link>
 		</div>

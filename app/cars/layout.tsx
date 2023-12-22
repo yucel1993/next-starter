@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { request, gql } from 'graphql-request';
+import { Toaster } from 'sonner';
 
 const WP_URL = process.env.GRAPQL_BASE!;
 type Props = {
@@ -30,6 +31,7 @@ export default async function layout({ children }: Props) {
 
 	return (
 		<div className="sidebar-layout">
+			<Toaster />
 			<h2 id="product-categories">Kategorien</h2>
 
 			<aside className="sidebar-layout__sidebar">

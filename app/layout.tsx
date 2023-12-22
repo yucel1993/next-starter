@@ -4,7 +4,7 @@ auch in einzelnen page- bzw. Komponenten-Dateien css importieren.
 */
 import { Caveat } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
-
+import { Toaster, toast } from 'sonner';
 import '@/css/style.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';

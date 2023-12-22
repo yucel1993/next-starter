@@ -2,6 +2,7 @@
 
 import { useFavorites } from '@/context/FavoritesContext';
 import Image from 'next/image';
+import { toast } from 'sonner';
 type Prop = {
 	title: string;
 	featuredImage: {
@@ -32,7 +33,13 @@ export default function FavoriteTeaser({ title, featuredImage }: Prop) {
 						/>
 					)}
 				</div>
-				<button className="colorful" onClick={() => removeFavorite(title)}>
+				<button
+					className="colorful"
+					onClick={() => {
+						toast('Removed from favorited');
+						removeFavorite(title);
+					}}
+				>
 					Remove Favorite
 				</button>
 			</>

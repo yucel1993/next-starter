@@ -78,7 +78,7 @@ main {
 }
 
 .header .button-daymode {
-	background-color: yellow;
+	background-color: deeppink;
 	border-radius: 50%;
 	display: flex;
 	align-content: center;
@@ -242,18 +242,42 @@ main {
 .home-button {
 	border: none;
 	margin-top: 1rem;
+	padding: 2px 10px;
 	border-radius: 1rem;
 	box-shadow: #7c4dff;
-	-webkit-box-shadow: 3px 0px 32px 30px rgba(240, 26, 126, 0.35);
-	-moz-box-shadow: 3px 0px 32px 30px rgba(240, 26, 158, 0.35);
-	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
+	-webkit-box-shadow: 3px 0px 32px 10px rgba(240, 26, 126, 0.35);
+	-moz-box-shadow: 3px 0px 32px 10px rgba(240, 26, 158, 0.35);
+	box-shadow: 3px 0px 32px 10px rgba(80, 26, 240, 0.35);
 }
 .home-button:hover {
 	cursor: pointer;
 	color: white;
-	background: linear-gradient(to right, red, blue);
+	background-color: deeppink;
 	border: none;
 	box-shadow: #7c4dff;
+}
+
+.favoriteButton {
+	padding: 10px;
+	border-radius: 8px;
+	background-color: deepskyblue;
+	cursor: pointer;
+	color: white;
+	box-shadow: #7c4dff;
+	-webkit-box-shadow: 3px 0px 32px 10px rgba(240, 26, 126, 0.35);
+	-moz-box-shadow: 3px 0px 32px 10px rgba(240, 26, 158, 0.35);
+	box-shadow: 3px 0px 32px 10px rgba(80, 26, 240, 0.35);
+
+	border: none;
+	&:hover {
+		background-color: deeppink;
+		cursor: pointer;
+		color: white;
+		box-shadow: #7c4dff;
+		-webkit-box-shadow: 3px 0px 32px 10px rgba(240, 26, 126, 0.35);
+		-moz-box-shadow: 3px 0px 32px 10px rgba(240, 26, 158, 0.35);
+		box-shadow: 3px 0px 32px 10px rgba(80, 26, 240, 0.35);
+	}
 }
 
 /* Car divider */

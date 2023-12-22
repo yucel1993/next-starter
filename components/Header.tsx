@@ -68,7 +68,7 @@ const Header = () => {
 					onClick={() => toggleDarkMode()}
 					className={isDarkMode ? 'button-darkmode' : 'button-daymode'}
 				>
-					{isDarkMode ? <MdNightlight /> : <FaRegSun />}
+					{isDarkMode ? <MdNightlight /> : <FaRegSun color="white" />}
 				</button>
 			</div>
 			<div className="header-right-drop">

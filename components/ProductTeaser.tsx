@@ -6,6 +6,7 @@ import { GraphCar } from '@/lib/types';
 import Image from 'next/image';
 
 import Link from 'next/link';
+import { toast } from 'sonner';
 
 export default function ProductTeaser({
 	title,
@@ -53,7 +54,10 @@ export default function ProductTeaser({
 					</div>
 					<button
 						className="colorful"
-						onClick={() => addFavorite({ title, featuredImage })}
+						onClick={() => {
+							toast('Added to favorited');
+							addFavorite({ title, featuredImage });
+						}}
 					>
 						Add Favorite
 					</button>
