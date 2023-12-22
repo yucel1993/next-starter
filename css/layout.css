@@ -2,7 +2,7 @@ body {
 	background-image: url('../public/img/vector-JUL-2021-61.jpg');
 	/* background-repeat: no-repeat; */
 	background-position: center;
-	background-size: contain;
+	background-size: cover;
 	height: 100vh;
 }
 .dark-mode {
@@ -196,9 +196,9 @@ main {
 	flex-wrap: wrap;
 	margin-bottom: 4rem;
 	box-shadow: #7c4dff;
-	-webkit-box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
-	-moz-box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
-	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35);
+	-webkit-box-shadow: 3px 0px 32px 20px rgba(80, 26, 240, 0.35);
+	-moz-box-shadow: 3px 0px 32px 20px rgba(80, 26, 240, 0.35);
+	box-shadow: 3px 0px 32px 20px rgba(80, 26, 240, 0.35);
 }
 .product-teaser__title {
 	margin: auto;
