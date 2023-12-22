@@ -4,10 +4,10 @@
 	margin: 7rem auto;
 	.image-corousel {
 		border-radius: 3rem;
-	}
-	.demo-carousel-container-div .image-corousel {
 		border-radius: 2rem;
+		object-fit: contain;
 	}
+
 	.legend {
 		text-transform: uppercase;
 	}

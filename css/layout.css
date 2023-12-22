@@ -175,13 +175,13 @@ main {
 	align-items: center;
 	gap: 3rem;
 }
+/* .image-corousel {
+	border-radius: 3px;
+} */
 
 @media (max-width: 440px) {
 	.demo-carousel-container-text-container {
 		flex-direction: column;
-		.image-corousel {
-			width: 30%;
-		}
 	}
 }
 .demo-carousel-container-text-container-div {
@@ -213,14 +213,21 @@ main {
 }
 
 .colorful {
+	margin-left: 1rem;
+	border-radius: 4px;
 	cursor: pointer;
 	color: white;
-	background: linear-gradient(to right, red, blue);
+	background: deeppink;
+
 	border: none;
-	box-shadow: #7c4dff;
+
 	/* -webkit-box-shadow: 3px 0px 32px 30px rgba(240, 26, 126, 0.35);
 	-moz-box-shadow: 3px 0px 32px 30px rgba(240, 26, 158, 0.35);
 	box-shadow: 3px 0px 32px 30px rgba(80, 26, 240, 0.35); */
+}
+
+.colorful:hover {
+	background-color: #7c4dff;
 }
 .header-right .header-div-color {
 	color: deeppink !important;

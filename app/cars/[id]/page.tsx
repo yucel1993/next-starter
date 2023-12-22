@@ -51,4 +51,12 @@ export async function generateMetadata({ params: { id } }: Params) {
 	};
 }
 
+// export async function generateStaticParams() {
+// 	const response = await fetch(`${WP_REST_BASE}/posts`);
+
+// 	const posts = (await response.json()) as BlogPostRest[];
+
+// 	return posts.map((post) => ({ params: { slug: post.slug } }));
+// }
+
 export default OneCar;
